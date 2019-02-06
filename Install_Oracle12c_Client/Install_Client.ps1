@@ -1,0 +1,1 @@
+Start-Process -FilePath "\\filesvr1\Software\Oracle\12cR2\Oracle12_Client\ODTwithODAC121024\setup.exe" -ArgumentList "-silent","-nowait","-responseFile \\filesvr1\Software\Oracle\oracleclient.rsp","-force" -Wait

@@ -1,0 +1,3 @@
+Export-StartLayout -Path C:\Layout.xml
+
+Import-StartLayout -LayoutPath C:\Temp\Layout.xml -MountPath $env:SystemDrive\

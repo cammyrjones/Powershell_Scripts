@@ -1,0 +1,11 @@
+﻿$ErrorActionPreference= 'silentlycontinue'
+$hosts = Get-ADComputer -Filter 'Name -like "*db*"' |Select-Object -ExpandProperty Name
+foreach ($hostname in $hosts){
+$hostip = ""
+$hostip = [System.Net.Dns]::GetHostAddresses($hostname)
+if ([string]::IsNullOrEmpty($hostip))
+    {
+    $hostip = "unknown"
+    }
+write-host $hostname " -> " $hostip
+}

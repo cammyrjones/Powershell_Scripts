@@ -1,0 +1,10 @@
+1. Copy to where you need to use it (you can't edit it on the file share)
+2. Open in editor - set the path to your notepad++ exe location
+3. Save it
+4. Close it
+5. Run it (right click, run with powershell)
+6. It'll prompt for the path containing the logs to search (it isn't recursive)
+7. It'll prompt for the file extensions to search, enter * for all text files
+8. Enter the string to search for in the text files
+9. Assuming anything matching that string was found, it'll open a multiple selection window - you can make a single or multiple selection, click OK and Notepad++ will open the files on the lines selected.
+NOTE: if you select multiple lines from the same file, Notepad++ will just open one tab for the first line selected.

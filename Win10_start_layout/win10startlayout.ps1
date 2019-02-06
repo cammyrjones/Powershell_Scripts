@@ -1,0 +1,1 @@
+﻿Import-StartLayout -LayoutPath \\filesvr1\Scripts\Win10_start_layout\StartLayout.xml -MountPath $env:SystemDrive\

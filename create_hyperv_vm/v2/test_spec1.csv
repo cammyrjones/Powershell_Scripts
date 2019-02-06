@@ -1,0 +1,2 @@
+VMName,NumVCPU,StartupMemoryGB,MinMemoryGB,MaxMemoryGB,Disk1SizeGB,Disk2SizeGB,Disk3SizeGB,Disk4SizeGB
+EASTCVWS01,2,8,8,8,70,100,25,

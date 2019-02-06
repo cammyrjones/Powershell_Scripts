@@ -1,0 +1,39 @@
+<#
+.SYNOPSIS
+    
+.DESCRIPTION
+    Takes the users name and calculates the expiry date and also displays the date the password was last set
+.PARAMETER FirstName
+    Users first name
+.PARAMETER Surname
+    Users surname / last name
+.EXAMPLE
+    C:\PS>
+    Get-ExpiryDate -Firstname "Jim" -Surname "Moore"
+.NOTES
+    Be aware of nicknames e.g Rob instead of Robert
+.FUNCTIONALITY
+   This can be used if a user is going away for a while and might have trouble changing their password
+#>
+function Get-Expirydate {
+    param(
+        [Parameter(Mandatory = $true)]
+        [ValidateNotNullOrEmpty()]
+        [string[]]$FirstName,
+
+        [Parameter(Mandatory = $true)]
+        [ValidateNotNullOrEmpty()]
+        [string]$Surname
+    )
+
+$Usernames =@()
+
+$Usernames += (Get-ADUser -Filter { ( Givenname -eq $Firstname) -and ( Surname -eq $Surname ) } | Select-Object -ExpandProperty samaccountname)
+
+Foreach ($Username in $Usernames){
+$output = (Get-ADUser $Username –Properties "DisplayName", "msDS-UserPasswordExpiryTimeComputed", "passwordlastset" | Select-Object -Property "Samaccountname","Displayname",@{Name="ExpiryDate";Expression={[datetime]::FromFileTime($_."msDS-UserPasswordExpiryTimeComputed")}},"passwordlastset")
+Write-Host $output | Format-Table
+}
+
+Pause
+}

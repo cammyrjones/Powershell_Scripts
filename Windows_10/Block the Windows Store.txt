@@ -1,0 +1,8 @@
+http://www.urtech.ca/2016/05/solved-video-how-to-disable-the-store-in-windows-10-pro-using-group-policy-gpo/
+    COMPUTER CONFIGURATION > POLICIES > WINDOWS SETTINGS > SECRURITY SETTINGS > SOFTWARE RESTRICTION POLICIES >
+
+    At this point you will likely have to right click and select NEW or CREATE to populate this GPO.
+
+    > ADDITIONAL RULES  > right click and create a rule that disallows %programfiles%\WindowsApps\Microsoft.WindowsStore*
+
+    It is VERY important to use the ‘*’ wildcard in this path because Microsoft will change the path as they update the STORE application over the coming years.

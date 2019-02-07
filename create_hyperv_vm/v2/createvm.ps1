@@ -116,9 +116,6 @@ function createvms {
         # Primary Network interface: VMSwitch
         $VMSwitchName = (Get-VMSwitch | Where-Object {$_.Name -notlike "*legacy*"}).name
 
-        ## Additional NICs
-        $NICs = @()
-
 
         ######################################################
         ###           VM Creation and Configuration        ###

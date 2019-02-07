@@ -29,7 +29,7 @@ function createvms {
     $vmdetails = Import-Csv $virtualmachinescsv
 
     #Set the ISO path
-    #$isopath = Read-Host "Enter path to ISO to use to boot VMs"
+    $isopath = Read-Host "Enter path to ISO to use to boot VMs"
 
     # VM Path
     #$VMPath = Read-Host "Enter path to store VMs"

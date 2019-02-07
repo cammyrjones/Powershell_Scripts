@@ -18,9 +18,9 @@ function createvms {
         [ValidateScript( {Test-Path $_})]
         [string]$virtualmachinescsv,
 
-        [Parameter(Mandatory = $true)]
-        [ValidateScript( {Test-Path $_})]
-        [string]$vmpath,
+       # [Parameter(Mandatory = $true)]
+       # [ValidateScript( {Test-Path $_})]
+       # [string]$vmpath,
 
         [Parameter(Mandatory = $False)]
         [int]$VlanPId
@@ -32,7 +32,7 @@ function createvms {
     $isopath = Read-Host "Enter path to ISO to use to boot VMs"
 
     # VM Path
-    #$VMPath = Read-Host "Enter path to store VMs"
+    $VMPath = "C:\VMs"
 
     # Start the foreach loop
     $vmdetails|ForEach-Object {
@@ -58,7 +58,7 @@ function createvms {
         $ProcessorCount = $_.NumVCPU
 
         ## Memory (Static = 0 or Dynamic = 1)
-        $Memory = 1
+        $Memory = 0
         # StaticMemory
         $StaticMemory = 4GB
 
@@ -110,7 +110,7 @@ function createvms {
             $Drive       | Add-Member -MemberType NoteProperty -Name Type -Value Fixed
             $ExtraDrive += $Drive
         }
-        # You can copy/delete this below block as you wish to create (or not) and attach several VHDX
+        # You can copy/delete this above block as you wish to create (or not) and attach several VHDX
 
         ### Network Adapters
         # Primary Network interface: VMSwitch

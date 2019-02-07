@@ -47,9 +47,8 @@ function createvms {
         # Automatic Stop Action (TurnOff = 0, Save =1, Shutdown = 2)
         $AutoStopAction = 2
 
-        ######################################################
-        ###           Hardware Configuration               ###
-        ######################################################
+
+        ###### Hardware Configuration ######
 
 
         # VM Generation (1 or 2)

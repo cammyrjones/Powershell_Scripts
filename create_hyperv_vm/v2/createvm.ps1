@@ -10,7 +10,7 @@
 .EXAMPLE
     createvms -virtualmachinescsv c:\temp\test.csv -vmpath c:\vms
 .FUNCTIONALITY
-    Hyper-V VM creation from a template
+    Hyper-V VM creation from a template (CSV File)
 #>
 function createvms {
     param (

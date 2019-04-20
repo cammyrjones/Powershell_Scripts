@@ -7,8 +7,8 @@ $msolcredential = Get-Credential
 #connect to MS online service using creds
 Connect-MsolService -Credential $msolcredential
 
-#get the list of users from Capita CCS - select name and userPN - PN will be used to get the 365 license info
-$userlist = Get-ADUser -Filter * -SearchBase "OU=Users,OU=Desktop,OU=Capita Communications and Control Solutions,OU=Business Unit,DC=ad,DC=capita,DC=co,DC=uk"|Select-Object name, userprincipalname|Sort-Object name
+#get the list of users - select name and userPN - PN will be used to get the 365 license info
+$userlist = Get-ADUser -Filter * -SearchBase ""|Select-Object name, userprincipalname|Sort-Object name
 
 $outputfile = "c:\temp\365.csv"
 
@@ -18,11 +18,11 @@ foreach ($user in $userlist) {
     $skuid = $null
     $skuid = (get-MSOLUser -UserPrincipalName ($user.userprincipalname)).Licenses.AccountSKUID
 
-    if ($skuid -eq "capita:STANDARDPACK") {
+    if ($skuid -eq ":STANDARDPACK") {
         $details = [string](($user.name|Out-String) + ";" + ($user.userprincipalname|Out-String) + ";" + $skuid +";" + "E1") -replace "`r|`n", ""
         $details|Out-File -FilePath $outputfile -Append -NoClobber
     }
-    elseif ($skuid -eq "capita:ENTERPRISEPACK") {
+    elseif ($skuid -eq ":ENTERPRISEPACK") {
         $details = [string](($user.name|Out-String) + ";" + ($user.userprincipalname|Out-String) + ";" + $skuid + ";" + "E3") -replace "`r|`n", ""
         $details|Out-File -FilePath $outputfile -Append -NoClobber       
     }

@@ -1,15 +1,8 @@
 $Computers = @(
-#"CCCSWC0581"
-#"CCCSWC0582"
-#"CCCSWC0583"
-#"CCCSWC0584"
-#"CCCSWC0585"
-#"CCCSWC0586"
-#"CCCSWC0587"
 "win10test"
 )
 $EmailAddresses = @(
-"PAUL.WINSTANLEY@capita.co.uk"
+""
 )
 
 $Usernames = @()

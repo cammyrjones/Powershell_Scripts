@@ -1,5 +1,5 @@
 ﻿$ie = New-Object -com internetexplorer.application;
-$ie.Navigate("https://servicedesk.capitasecureinformationsolutions.co.uk")
+$ie.Navigate("")
 $ie.Visible = $true
 
 $i = 0;

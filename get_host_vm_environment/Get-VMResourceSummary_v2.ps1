@@ -3,8 +3,8 @@ $logname = (get-date -Format yyyyMMdd-HHmmss).ToString()+".txt"
 $logpath = "c:\temp\$logname"
 
 
-#$hypervservers = Get-ADGroupMember -Identity "CCCS-CG-Hyper_V_Hosts" |Select-Object -ExpandProperty name|sort
-$hypervservers = "ccs-hyperv8"
+#$hypervservers = Get-ADGroupMember -Identity "" |Select-Object -ExpandProperty name|sort
+$hypervservers = ""
 
 foreach ($hypervserver in $hypervservers) 
 {

@@ -3,8 +3,8 @@ $logname = (get-date -Format yyyyMMdd-HHmmss).ToString() + ".txt"
 $logpath = "c:\temp\$logname"
 
 # maybe change this for get-adcomputer for our OU
-#$hypervservers = Get-ADGroupMember -Identity "CCCS-CG-Hyper_V_Hosts" |Select-Object -ExpandProperty name|sort
-$hypervservers = "ccs-hyperv4"
+#$hypervservers = Get-ADGroupMember -Identity "" |Select-Object -ExpandProperty name|sort
+$hypervservers = ""
 
 #foreach computer object found, write the name to the output file, run get-vm and copy output to file, write a separator to file
 foreach ($hypervserver in $hypervservers) {

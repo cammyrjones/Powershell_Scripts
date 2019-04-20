@@ -1,1 +1,0 @@
-Copy-Item \\filesvr1\Software\MICROSOFT\BGInfo\Bginfo.exe-Shortcut.lnk -Destination "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup"

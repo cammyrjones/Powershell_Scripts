@@ -1,1 +1,1 @@
-Send-MailMessage -To "Rob Peck <rob.peck@capita.co.uk>" -From "Rob Peck <rob.peck@capita.co.uk>" -Subject "test" -Body "this is a test" -DNO OnSuccess,OnFailure -SmtpServer smtprelay.capita.zone
+Send-MailMessage -To "" -From "" -Subject "test" -Body "this is a test" -DNO OnSuccess,OnFailure -SmtpServer 

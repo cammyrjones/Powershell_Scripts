@@ -1,6 +1,6 @@
 #get list of servers
 $racknumber = '*Rack ' + (Read-Host "Enter number of rack to check") + '*'
-$searchbase = "OU=Server,OU=Capita Communications and Control Solutions,OU=Business Unit,DC=ad,DC=capita,DC=co,DC=uk"
+$searchbase = ""
 $computers = Get-ADComputer -Filter {description -like $racknumber} -SearchBase $searchbase |Select-Object -ExpandProperty name|sort
 #loop through the list
 foreach ($computer in $computers)

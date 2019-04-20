@@ -3,7 +3,7 @@
 
 Start-Transcript c:\temp\sqllistyeah.txt
 
-$servers = Get-ADComputer -Filter * -SearchBase "OU=Server,OU=Capita Communications and Control Solutions,OU=Business Unit,DC=ad,DC=capita,DC=co,DC=uk"|Select-Object -ExpandProperty name
+$servers = Get-ADComputer -Filter * -SearchBase ""|Select-Object -ExpandProperty name
 
  foreach ($server in $servers)
  {

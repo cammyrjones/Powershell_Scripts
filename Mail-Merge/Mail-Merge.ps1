@@ -1,5 +1,8 @@
-#Clears email body
-$emailbody = ""
+# Blanks details
+$user.Email = ""
+$user.FirstName = ""
+$user.LastName = ""
+$EmailBody = ""
 
 # Reports on Success and Failure
 $EmailDeliveryNotificationOption = "OnFailure"
@@ -7,10 +10,10 @@ $EmailDeliveryNotificationOption = "OnFailure"
 # SMTP server details
 $EmailSMTPserver = "outlook.office365.com"
 $Port = 587
-$SMTPCred = (Get-Credential) # User format is domain\username or email address
+#$SMTPCred = (Get-Credential) # User format is domain\username or email address
 
 # Name and email of sender
-$EmailFrom = "Peter Browning <starcomadmin@lakecm.onmicrosoft.com>"
+$EmailFrom = "Peter Browning <peter.browning@lakecm.co.uk>"
  
 # CSV with columns named Name, Email, SamAccountName
 $SourcePath = "C:\temp\Users.csv"
@@ -27,10 +30,7 @@ $EmailTo = $User.Email
 $EmailSubject = "A Test Email for " + $User.FirstName + " " + $User.LastName + "."
 
 # Email Body
-$EmailBody += "<html xmlns=""http://www.w3.org/1999/xhtml""><head>"
-$EmailBody += "<meta http-equiv=""Content-Type"" content=""text/html; charset=UTF-8"" />"
-$EmailBody += "<meta name=""viewport"" content=""width=device-width, initial-scale=1.0""/>"
-$EmailBody += "<title>" + $EmailSubject + "</title>"
+$EmailBody = "<title>" + $EmailSubject + "</title>"
 $EmailBody += "</head><body bgcolor=""#FFFFFF"" style=""font-family: sans-serif; color: #000000"">"
 $EmailBody += "<p>Dear " + $User.FirstName + ":</p>"
 $EmailBody += "<p>This is a test email.</p>"

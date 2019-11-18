@@ -54,6 +54,12 @@ $apps = @(
     "Microsoft.GetHelp"
     "Microsoft.Print3D"
 
+    # Redstone 5 apps
+    "Microsoft.MixedReality.Portal"
+    "Microsoft.ScreenSketch"
+    "Microsoft.XboxGamingOverlay"
+    "Microsoft.YourPhone"
+
     # non-Microsoft
     "9E2F88E3.Twitter"
     "PandoraMediaInc.29680B314EFC2"

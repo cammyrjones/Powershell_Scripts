@@ -1,3 +1,5 @@
+How to install PowerCLI
+
 To install the module - only needs to be done once on a PC
 Save-Module -Name VMware.PowerCLI -Path C:\Windows\System32\WindowsPowerShell\v1.0\Modules - if this cmdlet doesn't work, copy the PowerCLI to the same location
 Import-Module -Name VMware.PowerCLI

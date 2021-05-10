@@ -5,7 +5,7 @@ Import-Module -Name VMware.PowerCLI
 To test run Get-Module -ListAvailable -Name VMware*
 
 To connect to a VMWare server using PowerCLI run 
-Connect-VIServer ñserver ìIP address or hostnameî
+Connect-VIServer ‚Äìserver ‚ÄúIP address or hostname‚Äù
 You may get an error regarding an "Invalid server certificate". If you see this error run the command below
 Set-PowerCLIConfiguration -InvalidCertificateAction Ignore -Confirm:$false
 
